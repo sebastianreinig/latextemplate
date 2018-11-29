@@ -1,5 +1,5 @@
 # latextemplate
-LaTex Template für wissenschaftliche Arbeiten
+LaTex Template für wissenschaftliche Arbeiten. 
 
 
 # Nutzung
