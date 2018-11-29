@@ -1,0 +1,153 @@
+\documentclass[
+fontsize=12pt,
+paper=a4,
+ngerman,
+DIV=calc,
+oneside, %twoside
+numbers=enddot,
+headsepline,
+listof=totoc,
+bibliography=totoc,
+index=totoc,
+pointlessnumbers,
+draft=false, 
+parskip=full-,
+BCOR=5mm %TODO
+]{scrbook} %scrreprt, scrbook
+
+\clubpenalty = 10000
+\widowpenalty = 10000 
+\displaywidowpenalty = 10000
+
+\usepackage[hyphens]{url}
+
+
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+
+%\usepackage{lmodern}       %Schriftart 
+\usepackage{pslatex}
+
+\usepackage{textcomp} % Euro-Zeichen etc.
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[paper=a4paper,left=35mm,right=25mm,top=20mm,bottom=20mm,includeheadfoot]{geometry}
+\setlength{\footskip}{2cm} 
+
+\usepackage[bookmarksdepth=subsection,colorlinks=false,pdfborder={0 0 0},plainpages=false]{hyperref}
+%fuer hyperlinks im pdf-format
+%PDF-META
+\hypersetup{
+ pdftitle={\pdftitle},
+    pdfsubject={\pdfsubject},
+    pdfauthor={\pdfauthor},
+    pdfkeywords={\pdfkeywords}
+  }
+
+
+\usepackage{csquotes}
+
+
+%\usepackage[round]{natbib}
+
+
+%(\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}) Silbentrennung ggf
+
+%Zitieren
+\usepackage[
+backend=biber,
+%style=alphabetic,    % Zitierstil
+bibstyle=authoryear,
+citestyle=authoryear,
+isbn=false,                % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
+url=false,
+doi=false,
+pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
+maxbibnames=10,            % maximale Namen, die im Literaturverzeichnis angezeigt werden 
+maxcitenames=2,            % maximale Namen, die im Text angezeigt werden, ab 3 wird u.a. nach den ersten Autor angezeigt
+autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
+block=space,               % kleiner horizontaler Platz zwischen den Feldern
+backref=false,              % Seiten anzeigen, auf denen die Referenz vorkommt
+backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
+date=short,                % Datumsformat
+%natbib=true,
+bibencoding=utf8,
+%firstinits=true, %depr given
+giveninits=true,
+%uniquename=init,
+uniquename=false,
+dashed=false,
+  clearlang=true
+]{biblatex}
+
+\AtEveryBibitem{%
+  \clearlist{language}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Abkürzungsverzeichnis
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[intoc,german]{nomencl}
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+\let\abk\nomenclature
+\setlength{\nomlabelwidth}{.20\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\setlength{\nomitemsep}{-\parsep}
+\makenomenclature
+
+\usepackage{verbatim}
+
+\usepackage{setspace}
+
+%\usepackage{scrpage2}
+%\usepackage[automark,footsepline,plainfootsepline,headsepline]{scrpage2} 
+\usepackage[automark,headsepline]{scrpage2} 
+
+%\automark[section]{chapter} 
+%\usepackage{scrpage2} 
+
+
+
+\renewcommand*{\finalnamedelim}{%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+  \addspace\&\space}
+
+\DefineBibliographyStrings{ngerman}{ 
+   andothers = {{et\,al\adddot}},             
+} 
+ 
+ \renewcommand*{\nameyeardelim}{\addcomma\space}
+
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=purple,backgroundcolor=purple!25,bordercolor=purple,#1]{#2}}
+
+\usepackage{array}
+
+\newcolumntype{P}[1]{>{\hspace{0pt}}p{#1}}
+\usepackage{rotating}
+
+
+
+%Für hübsche Zitate
+\usepackage{epigraph}
+
+% \epigraphsize{\small}% Default
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
+\usepackage{booktabs}
+
+
+
+%%%%Testweise

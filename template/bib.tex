@@ -1,0 +1,87 @@
+\include{pre/meta}
+\include{pre/preamble}
+\addbibresource{literatur.bib}
+
+\addbibresource{internet.bib}
+
+
+\begin{document}
+\pagenumbering{alph}
+
+\include{inc/titlepage}%Definitionen Titelblatt
+\maketitle
+
+\singlespacing
+
+
+\pagenumbering{Roman}   % I, II, III... roman => i, ii, iii
+\setcounter{page}{1}
+
+\cleardoublepage
+
+\pagestyle{plain}
+
+%\include{inc/vorwort}
+%\include{inc/abstract}
+
+
+
+\tableofcontents			%Inhaltsverzeichnis
+\cleardoublepage
+
+%Abstände checken
+\listoffigures					% Abbildungsverzeichnis
+\cleardoublepage
+\listoftables					% Tabellenverzeichnis 
+\cleardoublepage
+\input{inc/abk}						% Abkürzungsverzeichnis
+\cleardoublepage
+\cleardoublepage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%\renewcommand{\chapterpagestyle}{scrheadings}
+\pagestyle{scrheadings}
+%\clearscrheadings	
+%\clearscrheadfoot
+\automark[section]{chapter}
+
+\ohead{}
+\ihead{\headmark}
+\chead{}
+%\cfoot{\pagemark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGIN - Content
+\onehalfspacing 
+\clearpage
+
+
+
+
+\include{content/cp1}
+%add more chapters
+
+
+\cleardoublepage
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END - Content
+
+\singlespacing
+\pagenumbering{roman}   % i, ii, iii, iv, ...
+\setcounter{page}{1}
+
+\nocite{*}
+
+
+\printbibliography[nottype=online]
+
+\printbibliography[title={Title of online sources}, type=online]
+
+\cleardoublepage
+\include{inc/eides}
+
+\end{document}
