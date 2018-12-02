@@ -1,5 +1,9 @@
 # latextemplate
-LaTex Template für wissenschaftliche Arbeiten. 
+LaTex Template für wissenschaftliche Arbeiten. Jetzt schon nutzbar, aber ohne Anleitung ;)
+
+# Todos
+-Anleitung zur Nutzung des Templates
+-Template bereinigen
 
 
 # Nutzung
