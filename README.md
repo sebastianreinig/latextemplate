@@ -11,3 +11,7 @@ Ladet euch das aktuelles Release herunter und nutzt ein völlig Funktionsfähige
 
 # Credits
 sebastianreinig.de
+
+# macOS TeXShop Tutorial
+
+coming soon
