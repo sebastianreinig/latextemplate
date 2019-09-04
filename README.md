@@ -14,4 +14,4 @@ sebastianreinig.de
 
 # macOS TeXShop Tutorial
 
-coming soon
+...
