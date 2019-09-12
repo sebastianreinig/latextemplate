@@ -22,7 +22,7 @@ Grundsätzlich wird als Ausgangsbasis für die Kompilierung das File bib.tex ver
 ```
 \begin{document}
 ```
-beinhaltet. In TeXShop kann auf Typeset geklickt werden, um ein PDF aus dem .tex File zu erzeugen. Die einzelnen Kapitel werden im content Verzeichnis abgelegt. Werden weitere Kapitel-Files angelegt, dann sind diese in das bib.tex File einzufügen. 
+beinhaltet. In TeXShop kann auf 'Typeset' geklickt werden, um ein PDF aus dem .tex File zu erzeugen. Die einzelnen Kapitel werden im content Verzeichnis abgelegt. Werden weitere Kapitel-Files angelegt, dann sind diese in das bib.tex File einzufügen. 
 ```
 \include{content/chapter_n}
 ```
@@ -34,11 +34,16 @@ Literaturquellen werden in (mindestens einem) .bib File gepflegt. Das File ist i
 ````
 Um das Literaturverzeichnis zu bearbeiten, wird von TeXShop das Programm BibDesk mitgeliefert. Dort können die Literaturquellen verwaltet werden. Die Optionen, die für das Zitieren sowie das Literaturverzeichnis von Bedeutung sind, werden im File preamble.tex bearbeitet. Es wird das Package biblatex verwendet.
 
-Um das Literaturverzeichnis zu erzeugen, ist mindestens der Befehl biber bib einmal auf der Command Line auszuführen (im Verzeichnis latextemplate/template), die anderen Befehle können auch helfen, wenn das Literaturverzeichnis sich nicht erzeugen lässt:
-````
-biber bib.bib 
+Um das Literaturverzeichnis zu erzeugen, sind Befehle auf der Command Line auszuführen.  Dazu zählt zunächst die Kompilierung mit
+```
 latex bib.tex
-biber bib
-````
+```
 
-... more Information coming soon.
+sowie die Ausführung von
+```
+biber bib 
+```
+
+im Verzeichnis latextemplate/template. Danach ist (mindestens einmal) das PDF per 'Typeset' zu erzeugen. 
+
+... weitere Infos folgen in Kürze.
